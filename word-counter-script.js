@@ -7,7 +7,7 @@ let uniqueWords = new Set();
 
 function updateWordCount() {
   const text = textInput.value.trim();
-  const words = text.split(/\s+/);
+  const words = text.split(/\s+/).filter(word => word !== '');
   const currentWordCount = words.length;
 
   if (currentWordCount > 200) {
