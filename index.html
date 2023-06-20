@@ -1,1 +1,65 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>50-200</title>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+    }
+    
+    body {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      height: 100vh;
+      margin: 0;
+    }
+    
+    .input-container {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      text-align: center;
+      font-family: "Garamond", serif;
+      max-width: 100%;
+    }
 
+    h1, h2 {
+      font-family: "Garamond", serif;
+      margin-bottom: 20px;
+    }
+    
+    .input-box {
+      border: 1px solid black;
+      padding: 10px;
+      width: 100%;
+      max-width: calc(50vw - 20px);
+      height: auto;
+      min-height: 100px;
+      max-height: 50vh;
+      resize: both;
+      overflow: auto;
+    }
+    
+    .subtitle {
+      font-size: 14px;
+      color: gray;
+    }
+    
+  </style>
+</head>
+<body>
+  <div class="input container">
+    <h1>50-200</h1>
+    <h2 class="subtitle">This app is based on a suggested writing exercise from George Saunders. The idea is to write a 200-word short<br> story (exactly 200—not a word more or less) using fifty unique words or less. When faced with these<br> constraints, particularly the inability to over-describe things, writers often respond by driving the narrative<br> forward (because, after all, what else is there to do!), which leads to rising action—the heart of a short<br> story.<br></h2>
+    <h2 class="subtitle"><u>Start typing away on your short story. The app will keep track of each unique word for you and<br> present them in a list. When you’ve used fifty unique words, you won’t be able to introduce anymore.<br> You also won’t be able to type over two-hundred words. You can use the Copy button at the bottom<br> if you want to copy & paste your work into a word processor.</h2>
+    <div class="input-box" type="text" contenteditable="true" id="input-box"></div>
+    <button onclick="copyText()">Copy</button>
+  </div>  
+<script src="prevent-delete-script.js"></script>
+<script src="copy-script.js"></script>
+</body>
+</html>
