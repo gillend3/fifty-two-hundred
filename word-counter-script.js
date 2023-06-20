@@ -7,7 +7,7 @@ let uniqueWords = new Set();
 
 function updateWordCount() {
   const text = textInput.value.trim();
-  const words = text.split(/\s+/).filter(word => word !== ''); // Filter out empty words
+  const words = text.split(/\s+/).filter(word => word !== '');
   const currentWordCount = words.length;
 
   if (currentWordCount > 200) {
@@ -21,7 +21,8 @@ function updateWordCount() {
 
   // Check for new unique words
   if (currentWordCount > wordCount) {
-    words.slice(wordCount - 1).forEach((word) => {
+    const newWords = words.slice(wordCount);
+    newWords.forEach((word) => {
       if (!uniqueWords.has(word) && uniqueWords.size < 50) {
         uniqueWords.add(word);
         const listItem = document.createElement("li");
