@@ -7,12 +7,12 @@ let uniqueWords = new Set();
 
 function updateWordCount() {
   const text = textInput.value.trim();
-  const words = text.split(/\s+/).filter(word => word !== '');
-  const currentWordCount = words.length;
+  const words = text.match(/\b\w+\b/g);
+  const currentWordCount = words ? words.length : 0;
 
   if (currentWordCount > 200) {
-    const trimmedWords = words.slice(0, 200);
-    textInput.value = trimmedWords.join(" ");
+    const trimmedText = text.split(/\b\w+\b/).slice(0, 200).join(" ");
+    textInput.value = trimmedText;
   }
 
   // Update word count
